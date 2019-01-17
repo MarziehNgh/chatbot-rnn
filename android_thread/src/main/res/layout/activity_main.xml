@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <LinearLayout
+        android:visibility="visible"
+        android:id="@+id/home"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:text="CHAT BOT"
+            android:fontFamily="sans-serif"
+            android:textSize="15dp"
+            android:textColor="#a7aab0"
+            android:background="@drawable/header_bg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:textSize="13dp"
+            android:layout_width="match_parent"
+            android:background="@drawable/item_bg"
+            android:text="A chatbot is an artificial intelligence (AI) software that can simulate a conversation (or a chat) with a user in natural language."
+            android:layout_marginBottom="36dp"
+            android:textStyle="italic"
+            android:layout_height="wrap_content" />
+
+
+        <ImageView
+            android:id="@+id/start_record_btn"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/round_button"
+            android:padding="6dp"
+            android:src="@drawable/ic_microphone_none"
+            android:layout_margin="3dp"
+            android:gravity="center_vertical|center_horizontal" />
+
+        <TextView
+            android:id="@+id/recording_state_tv"
+            android:gravity="center"
+            android:text="ready!"
+            android:fontFamily="monospace"
+            android:layout_marginBottom="24dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:background="@drawable/response_bg"
+            android:layout_marginLeft="36dp"
+            android:layout_marginRight="36dp"
+            android:layout_height="200dp">
+            <TextView
+                android:id="@+id/chat_tv"
+                android:text="bot: click on microphone to start recording."
+                android:paddingTop="6dp"
+                android:paddingBottom="6dp"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp"
+                android:fontFamily="serif"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </ScrollView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/dashboard"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:background="#f8f8f9"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
+        <TextView
+            android:text="GROUP MEMBERS"
+            android:fontFamily="sans-serif"
+            android:textSize="15dp"
+            android:textColor="#a7aab0"
+            android:background="@drawable/header_bg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:weightSum="1"
+            android:layout_marginBottom="3dp"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:background="@drawable/item_bg"
+                android:text="Bardia Esmaeeli"
+                android:textSize="13dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content" />
+            <ImageView
+                android:src="@drawable/bardia"
+                android:layout_width="48dp"
+                android:layout_height="48dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:weightSum="1"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:background="@drawable/item_bg"
+                android:text="Mohammad Ghorbani"
+                android:textSize="13dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content" />
+            <ImageView
+                android:src="@drawable/mgh"
+                android:layout_width="48dp"
+                android:layout_height="48dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/notifications"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:background="#f8f8f9"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <TextView
+            android:text="SERVER ADDRESS"
+            android:fontFamily="sans-serif"
+            android:textSize="15dp"
+            android:textColor="#a7aab0"
+            android:background="@drawable/header_bg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:id="@+id/server_url"
+            android:textSize="13dp"
+            android:layout_width="match_parent"
+            android:background="@drawable/item_bg"
+            android:text="http://192.168.1.38:3000/hello"
+            android:layout_marginBottom="36dp"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/navigation"
+        android:layout_width="0dp"
+        android:visibility="visible"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="0dp"
+        android:layout_marginStart="0dp"
+        android:background="?android:attr/windowBackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:enabled="true"
+        app:menu="@menu/navigation" />
+
+</android.support.constraint.ConstraintLayout>
